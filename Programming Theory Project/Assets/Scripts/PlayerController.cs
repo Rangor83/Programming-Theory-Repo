@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -34,6 +35,11 @@ public class PlayerController : MonoBehaviour
         {
             powerUp.DoSpecialAction();
         }
+
+        if (transform.position.y < -10)
+        {
+            GameOver();
+        }
     }
 
     public void SetPowerUp(IPowerUP pu)
@@ -63,5 +69,10 @@ public class PlayerController : MonoBehaviour
         {
             powerUp.DoCollisionAction(collision);
         }
+    }
+
+    void GameOver()
+    {
+        SceneManager.LoadScene(0);
     }
 }
