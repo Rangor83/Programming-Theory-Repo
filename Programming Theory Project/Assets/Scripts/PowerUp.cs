@@ -5,14 +5,14 @@ using UnityEngine;
 
 public interface IPowerUP
 {
-    void DoSpecialAction();
-    void DoCollisionAction(Collision collision);
-    void Destroy();
+    void DoSpecialAction(); // ABSTRACTION
+    void DoCollisionAction(Collision collision); // ABSTRACTION
+    void Destroy(); // ABSTRACTION
 }
 
 public abstract class PowerUp : MonoBehaviour, IPowerUP
 {
-    protected GameObject player { get; private set; }
+    protected GameObject player { get; private set; } // ENCAPSULATION
     protected Rigidbody playerRb;
 
     public void Start()

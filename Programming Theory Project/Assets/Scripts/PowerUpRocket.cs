@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpRocket : PowerUp
+public class PowerUpRocket : PowerUp // INHERITANCE
 {
     private GameObject tmpRocket;
     public GameObject rocketPrefab;
 
-    public override void DoSpecialAction()
+    public override void DoSpecialAction() // POLYMORPHISM
     {
         foreach (var enemy in FindObjectsOfType<Enemy>())
         {

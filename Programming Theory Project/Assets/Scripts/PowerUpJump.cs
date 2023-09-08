@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpJump : PowerUp
+public class PowerUpJump : PowerUp // INHERITANCE
 {
-    public override void DoSpecialAction()
+    public override void DoSpecialAction() // POLYMORPHISM
     {
         float jumpForce = 20;
         playerRb.AddForce(-player.transform.forward, ForceMode.Impulse);
         playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
-    public override void DoCollisionAction(Collision collision)
+    public override void DoCollisionAction(Collision collision) // POLYMORPHISM
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
